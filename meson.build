@@ -53,6 +53,7 @@ libresplit_sources = files(
     'src/gui/game.c',
     'src/gui/help_dialog.c',
     'src/gui/settings_dialog.c',
+    'src/gui/split_layout_dialog.c',
     'src/gui/theming.c',
     'src/gui/timer.c',
 

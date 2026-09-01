@@ -2,6 +2,7 @@
 #include "src/gui/app_window.h"
 #include "src/gui/help_dialog.h"
 #include "src/gui/settings_dialog.h"
+#include "src/gui/split_layout_dialog.h"
 #include "src/lasr/auto-splitter.h"
 #include <gtk/gtk.h>
 
@@ -20,6 +21,7 @@ static const char* const resize_cursors[] = {
 static const GActionEntry context_menu_actions[] = {
     { "open-splits", open_activated },
     { "save-splits", save_activated },
+    { "open-split-layout", show_split_layout_menu },
     { "open-auto-splitter", open_auto_splitter },
     { "enable-auto-splitter", NULL, NULL, "false", toggle_auto_splitter },
     { "reload", reload_activated },
@@ -152,6 +154,7 @@ static void create_context_menu(LSAppWindow* win, gpointer app)
 
     g_menu_append(section, "Open Splits", "win.open-splits");
     g_menu_append(section, "Save Splits", "win.save-splits");
+    g_menu_append(section, "Open Split Layout Editor", "win.open-split-layout");
     g_menu_append_section(menu, NULL, G_MENU_MODEL(section));
     g_object_unref(section);
 
